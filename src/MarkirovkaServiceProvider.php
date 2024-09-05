@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\MyPackage;
+namespace Massterski\DmMarkirovka;
 
 use Illuminate\Support\ServiceProvider;
 
-class MyPackageServiceProvider extends ServiceProvider
+class MarkirovkaServiceProvider extends ServiceProvider
 {
     /**
      * Регистрация любых служб приложения.
@@ -13,7 +13,9 @@ class MyPackageServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Регистрация зависимостей пакета
+      $this->app->singleton(ApiClient::class, function ($app) {
+        return new ApiClient(config('services.ismet.base_uri'));
+      });
     }
 
     /**
@@ -23,7 +25,7 @@ class MyPackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Публикация конфигурационных файлов, маршрутов, миграций и т.д.
+      $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     }
 }
 

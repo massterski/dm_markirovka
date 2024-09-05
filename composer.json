@@ -1,5 +1,5 @@
 {
-    "name": "vendor/dm-markirovka",
+    "name": "massterski/dm-markirovka",
     "description": "Описание вашей библиотеки.",
     "type": "library",
     "license": "MIT",
@@ -15,13 +15,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Vendor\\MyPackage\\": "src/"
+            "Massterski\\DmMarkirovka\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Vendor\\DmMarkirovka\\MarkirovkaServiceProvider"
+                "Massterski\\DmMarkirovka\\MarkirovkaServiceProvider"
             ]
         }
     }

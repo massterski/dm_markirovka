@@ -12,7 +12,7 @@ class IsmetDTO
   public int $rowCount;
   public int $documentId;
   public int $edoid;
-  public int $bin;
+  public string $bin;
   public int $limit;
   public ?string $sortBy;
   public ?string $state;

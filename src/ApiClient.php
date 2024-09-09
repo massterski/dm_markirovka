@@ -68,7 +68,7 @@ class ApiClient
 
         $response = $this->client->post($this->baseUri . 'apiUot/api/v1/private/doc-list', [
             'headers' => [
-                'Authorization' => $token->access_token,
+                'Authorization' => 'Bearer '.$token->access_token,
                 'Content-Type' => 'application/json',
                 'Innbin' => $organizationBin,
                 'Commoditygroup' => 'pharma',
@@ -84,7 +84,7 @@ class ApiClient
 
         $response = $this->client->post($this->baseUri . 'apiUot/api/v1/private/code-comparison', [
             'headers' => [
-                'Authorization' => $token->access_token,
+                'Authorization' => 'Bearer '.$token->access_token,
                 'Content-Type' => 'application/json',
                 'Innbin' => $organizationBin,
                 'Commoditygroup' => 'pharma',
@@ -101,7 +101,7 @@ class ApiClient
 
         $response = $this->client->post($this->baseUri . 'apiUot/api/v2/private/profile-doc', [
             'headers' => [
-                'Authorization' => $token->access_token,
+                'Authorization' => 'Bearer '.$token->access_token,
                 'Content-Type' => 'application/json'
             ],
             'json' => $data
@@ -116,7 +116,7 @@ class ApiClient
 
         $response = $this->client->post($this->baseUri . 'apiUot/api/v2/private/document/codes/'.$documentId, [
             'headers' => [
-                'Authorization' => $token->access_token,
+                'Authorization' => 'Bearer '.$token->access_token,
                 'Content-Type' => 'application/json',
                 'Innbin' => $organizationBin,
                 'Commoditygroup' => 'pharma',
@@ -133,7 +133,7 @@ class ApiClient
 
     $response = $this->client->post($this->baseUri . 'apiUot/api/v1/private/info-km', [
       'headers' => [
-        'Authorization' => $token->access_token,
+        'Authorization' => 'Bearer '.$token->access_token,
         'Content-Type' => 'application/json'
       ],
       'json' => $data

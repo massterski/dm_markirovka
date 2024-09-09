@@ -126,4 +126,19 @@ class ApiClient
 
         return json_decode($response->getBody(), true);
     }
+
+  public function getDocumentId($organizationBin, $data)
+  {
+    $token = $this->refreshToken();
+
+    $response = $this->client->post($this->baseUri . 'apiUot/api/v1/private/info-km', [
+      'headers' => [
+        'Authorization' => $token->access_token,
+        'Content-Type' => 'application/json'
+      ],
+      'json' => $data
+    ]);
+
+    return json_decode($response->getBody(), true);
+  }
 }

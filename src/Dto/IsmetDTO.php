@@ -69,4 +69,14 @@ class IsmetDTO
       "page" => 1
     ];
   }
+
+  public function bodyDocumentId($data): array
+  {
+    $this->bin = $data['bin'];
+    $this->codes = $data['codes'];
+    return [
+      "bin" => $this->bin,
+      "codes" => $this->codes
+    ];
+  }
 }

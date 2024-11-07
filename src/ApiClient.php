@@ -141,4 +141,19 @@ class ApiClient
 
     return json_decode($response->getBody(), true);
   }
+  public function getAggregateCodes($organizationBin, $code)
+  {
+    $token = $this->refreshToken();
+
+    $response = $this->client->post($this->baseUri . 'apiUot/api/v1/private/aggregate/'.$code, [
+      'headers' => [
+        'Authorization' => 'Bearer '.$token->access_token,
+        'Content-Type' => 'application/json',
+        'Innbin' => $organizationBin,
+        'Commoditygroup' => 'pharma',
+      ]
+    ]);
+
+    return json_decode($response->getBody(), true);
+  }
 }

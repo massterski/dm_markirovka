@@ -145,7 +145,7 @@ class ApiClient
   {
     $token = $this->refreshToken();
 
-    $response = $this->client->post($this->baseUri . 'apiUot/api/v1/private/aggregate/'.$code, [
+    $response = $this->client->get($this->baseUri . 'apiUot/api/v1/private/aggregate/'.$code, [
       'headers' => [
         'Authorization' => 'Bearer '.$token->access_token,
         'Content-Type' => 'application/json',
